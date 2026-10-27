@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AimeCard : Universal OCR, character recognition, image document analysis</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/aimesoft/images/favicon.png">
+    <meta name="description" content="AimeCard is a Universal OCR platform from Aimesoft, which allows users to set templates for information extraction. Using template settings of AimeCard, you can easily extract information from various types of documents such as ID cards, passports, invoices.">
+    <meta name="keywords" content="AimeCard, OCR, optical character recognition, character recognition,  documents recognition, universal ocr">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="AimeCard : Universal OCR, character recognition, image document analysis">
+    <meta property="og:description" content="AimeCard is a Universal OCR platform from Aimesoft, which allows users to set templates for information extraction. Using template settings of AimeCard, you can easily extract information from various types of documents such as ID cards, passports, invoices.">
+    <meta property="og:url" content="/aimecard.html">
+    <meta property="og:image" content="/assets/aimesoft/images/logo-banner.png">
+    <meta property="og:type" content="article">
+    <!-- Twitter -->
+    <meta property="twitter:title" content="AimeCard : Universal OCR, character recognition, image document analysis">
+    <meta property="twitter:description" content="AimeCard is a Universal OCR platform from Aimesoft, which allows users to set templates for information extraction. Using template settings of AimeCard, you can easily extract information from various types of documents such as ID cards, passports, invoices.">
+    <meta property="twitter:image" content="/assets/aimesoft/images/logo-banner.png">
+    <meta property="twitter:url" content="/aimecard.html">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/aimesoft/css/main.css?v6" type="text/css"
+        media="screen">
+    <link rel="stylesheet"
+        href="/assets/aimesoft/css/extensions/owl-carousel/owl.carousel.min.css"
+        type="text/css">
+    <link rel="stylesheet"
+        href="/assets/aimesoft/css/extensions/owl-carousel/owl.theme.default.css"
+        type="text/css">
+    <script src="/assets/aimesoft/js/jquery-3.3.1.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172138666-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-172138666-1');
+    gtag('config', 'UA-240647349-1');
+    </script>
+        <meta name="google-site-verification" content="cM5pUyRgH4Yn6PrexSIvb-WooeVAZHr8XB3WSbLkxbQ">
+    <meta name="facebook-domain-verification" content="n4texlle9ed0y1ciqv53ni0ydrurt1">
+    
+    <!-- CAPTCHA Modal (jquery-modal) - Ultra compact -->
+    <style>
+    /* Override Bootstrap conflicts for CAPTCHA jquery-modal */
+    #captcha-modal.modal {
+        display: none;
+    }
+    .blocker #captcha-modal.modal {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        height: auto !important;
+        width: 90% !important;
+        max-width: 320px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        background-color: #fff !important;
+        z-index: 99999 !important;
+        padding: 16px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+        color: #333 !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+    }
+    #captcha-modal .captcha-modal-title {
+        color: #333 !important;
+        font-weight: bold !important;
+        padding: 0;
+        text-align: center;
+        margin: 0 0 12px 0;
+        font-size: 16px;
+        border: none !important;
+    }
+    #captcha-modal .btn {
+        height: auto !important;
+        line-height: 1.5 !important;
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        display: inline-block !important;
+    }
+    /* Ensure jquery-modal blocker is on top */
+    .jquery-modal.blocker {
+        z-index: 99998 !important;
+        text-align: center !important;
+    }
+    .jquery-modal.blocker:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+    }
+    </style>
+</head>
+<body>
+    <div class="aime-content">
+        
+<header class="header header--default">
+            <div class="info-header-container">
+            <h1 class="info-header-text">The FIRST Company to Develop Multimodal AI with 200+ Installations Worldwide</h1>
+            <ul class="info-list" style="display: flex; flex-direction: row; padding: 0;">
+                <li class="info-list__item" style="margin-right: 16px; padding: 5px 0;">
+
+                    
+                        <div class="info-list__icon" style="margin-right: 14px;">
+                            <img class="icon-telephone" style="width: 20px;" src="/assets/aimesoft/images/phone-call_01.png" alt="icon">
+                        </div>
+                        <div class="info-list__text"> <a style="color: white; font-size: 1rem;" href="tel:8553028668">CALL 855 302 8668 for A FREE Consultation</a></div>
+                                    </li>
+
+                <li class="info-list__item" style="margin-right: 16px; padding: 5px 0;">
+                    <div class="info-list__icon" style="margin-right: 14px;"><img class="icon-mail" style="width: 20px;" src="/assets/aimesoft/images/icon_email_09.png" alt="icon"></div>
+                    <div class="info-list__text"><a style="color: white; font-size: 1rem;" href="/contact.html">EMAIL US</a></div>
+                </li>
+
+            </ul>
+        </div>
+    
+
+
+    <nav class="navbar navbar-expand-xl header__content" id="navbar" data-spy="affix">
+
+        <div class="aime-container justify-content-between align-items-center">
+            <div class="header-left">
+                <a class="navbar-brand header__logo" style="flex-direction: column;" href="/">
+                    <img src="/assets/aimesoft/images/logo.png" alt="logo" width="200">
+                                            <p style="transform: translate(-30%); font-weight: bold;">Multimodal AI Services, Solutions & Consulting</p>
+                    
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menuToggle" aria-controls="menuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="nav-icon"></span>
+                    <span class="nav-icon"></span>
+                    <span class="nav-icon"></span>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="collapse navbar-collapse justify-content-end" id="menuToggle">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/company.html">About us</a></li><li class="nav-item"><a class="nav-link" href="/multimodalai.html">Multimodal AI</a></li><li class="nav-item"><a class="nav-link" href="/services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li><li class="nav-item"><a class="nav-link" href="/demo.html">Demo</a></li><li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li><li class="nav-item"><a class="nav-link" href="/press" style="cursor: pointer;">News</a></li>                    </ul>
+                    <ul class="language-list d-flex">
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/aimecard.html" title="English">
+                                <img src="/assets/aimesoft/images/flag-kingdom.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/ja/aimecard.html" title="japanese">
+                                <img src="/assets/aimesoft/images/flag-japan.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/vi/aimecard.html" title="viet nam">
+                                <img src="/assets/aimesoft/images/flag-vn.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/ko/aimecard.html" title="korea">
+                                <img src="/assets/aimesoft/images/flag-korea.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/fr/aimecard.html" title="france">
+                                <img src="/assets/aimesoft/images/flag-france.png" alt="flag">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<header class="header header--default" style="opacity: 0; position: static;">
+            <div class="info-header-container">
+            <h1 class="info-header-text">The FIRST Company to Develop Multimodal AI with 200+ Installations Worldwide</h1>
+
+            <ul class="info-list" style="display: flex; flex-direction: row; padding: 0;">
+                <li class="info-list__item" style="margin-right: 16px;">
+
+                    
+                        <div class="info-list__icon" style="margin-right: 14px;">
+                            <img class="icon-telephone" style="width: 20px;" src="/assets/aimesoft/images/phone-call.png" alt="icon">
+                        </div>
+                        <div class="info-list__text"> <a href="tel:8553028668">855 302 8668</a></div>
+                                    </li>
+
+                <li class="info-list__item" style="margin-right: 10px;">
+                    <div class="info-list__icon" style="margin-right: 14px;"><img class="icon-mail" style="width: 20px;" src="/assets/aimesoft/images/mail-icon.png" alt="icon"></div>
+                    <div class="info-list__text"><a href="mailto:info@aimesoft.com">info@aimesoft.com</a></div>
+                </li>
+
+            </ul>
+        </div>
+    
+
+
+    <nav class="navbar navbar-expand-xl header__content" id="navbar_1" data-spy="affix">
+
+        <div class="aime-container justify-content-between align-items-center">
+            <div class="header-left">
+                <a class="navbar-brand header__logo" style="flex-direction: column;" href="/">
+                    <img src="/assets/aimesoft/images/logo.png" alt="logo">
+                                            <p style="transform: translate(-50%); font-weight: bold;">Multimodal AI Services, Solutions & Consulting</p>
+                    
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menuToggle" aria-controls="menuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="nav-icon"></span>
+                    <span class="nav-icon"></span>
+                    <span class="nav-icon"></span>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="collapse navbar-collapse justify-content-end" id="menuToggle_1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/company.html">About us</a></li><li class="nav-item"><a class="nav-link" href="/multimodalai.html">Multimodal AI</a></li><li class="nav-item"><a class="nav-link" href="/services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li><li class="nav-item"><a class="nav-link" href="/demo.html">Demo</a></li><li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li><li class="nav-item"><a class="nav-link" href="/press" style="cursor: pointer;">News</a></li>                    </ul>
+                    <ul class="language-list d-flex">
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/aimecard.html" title="English">
+                                <img src="/assets/aimesoft/images/flag-kingdom.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/ja/aimecard.html" title="japanese">
+                                <img src="/assets/aimesoft/images/flag-japan.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/vi/aimecard.html" title="viet nam">
+                                <img src="/assets/aimesoft/images/flag-vn.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/ko/aimecard.html" title="korea">
+                                <img src="/assets/aimesoft/images/flag-korea.png" alt="flag">
+                            </a>
+                        </li>
+                        <li class="language-list__item">
+                            <a class="language-list__link" href="/fr/aimecard.html" title="france">
+                                <img src="/assets/aimesoft/images/flag-france.png" alt="flag">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>        <a href="javascript:" id="return-to-top">Top</a>
+        <div class="aime-hero-intro"><img   alt="First slide" class="d-block w-100" src="https://amdrive.aimesoft.com/webimg/homepage/press/banner/pic__aimecard.jpg"></div>
+
+<div class="aime-video">
+<div class="aime-video__content">
+<h1 class="aime-title">AimeCard : Universal OCR platform</h1>
+
+<p>&nbsp;</p>
+
+<p class="aime-text" style="text-align: justify;">AimeCard is a&nbsp;universal&nbsp;OCR platform for&nbsp;optical character recognition&nbsp;in the Aimenicorn software ecosystem. AimeCard can recognize both printed characters and hand-written characters with high accuracy (character level accuracy is more than 99%).&nbsp; The most important feature of AimeCard Universal OCR is that, it allows users to create the templates for information extraction from the input images. AimeCard therefore can&nbsp;analyze structures in documents, extract tables, figures and can be customized to work with various types of documents such as passport, ID card, driving license, etc.</p>
+</div>
+</div>
+
+<div class="aime-features bg-white-light d-flex justify-content-end position-relative"><img   alt="cover" class="bg-bl d-none d-lg-block" src="/assets/aimesoft/images/bg-c-04.png"><img   alt="product" class="cover images-right" src="/assets/aimesoft/images/bg-product-detail-aimecard.png">
+<div class="aime-features__wrap">
+<div class="aime-container-mini">
+<div class="row w-sm-100">
+<div class="col-md-8">
+<h1 class="aime-title">AimeCard Features</h1>
+
+<ul class="icon-box d-flex flex-wrap mb-4">
+	<li class="icon-box__item d-flex">
+	<div class="icon-box__images"><img   alt="content" src="/assets/aimesoft/images/feature-01.png"></div>
+
+	<div class="icon-box__text">Allow users to config templates themselves</div>
+	</li>
+	<li class="icon-box__item d-flex">
+	<div class="icon-box__images"><img   alt="content" src="/assets/aimesoft/images/feature-02.png"></div>
+
+	<div class="icon-box__text">Driving license and passport recognition</div>
+	</li>
+	<li class="icon-box__item d-flex">
+	<div class="icon-box__images"><img   alt="content" src="/assets/aimesoft/images/feature-03.png"></div>
+
+	<div class="icon-box__text">Invoices and documents recognition</div>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="aime-tech-detail position-relative"><img   alt="cover" class="bg-br" src="/assets/aimesoft/images/bg-c-04.png">
+<div class="container">
+<h1 class="aime-title text-center">AimeCard Technologies</h1>
+
+<p class="aime-text text-center">Aimesoft’s technologies to realize AimeCard</p>
+</div>
+
+<div class="aime-container-mini">
+<ul class="tech-detail d-flex flex-wrap">
+	<li class="tech-detail__item">
+	<div class="tech-detail__icon"><img   alt="product" src="/assets/aimesoft/images/technologies-02.png"></div>
+
+	<div class="tech-detail__title">Computer Vision technologies</div>
+
+	<div class="tech-detail__text">Object recognition, semantic segmentation, face recognition, gender/age recognition, OCR (optical character recognition), image search/retrieval, predictive analytics based on image</div>
+	</li>
+	<li class="tech-detail__item">
+	<div class="tech-detail__icon"><img   alt="product" src="/assets/aimesoft/images/technologies-01.png"></div>
+
+	<div class="tech-detail__title">Natural Language Processing technologies</div>
+
+	<div class="tech-detail__text">Tokenization, POS tagging, keyword extraction, synonym/antonym detection, information extraction, relation extraction, semantic search, natural language understanding</div>
+	</li>
+	<li class="tech-detail__item">
+	<div class="tech-detail__icon"><img   alt="product" src="/assets/aimesoft/images/technologies-03.png"></div>
+
+	<div class="tech-detail__title">Layout understanding</div>
+
+	<div class="tech-detail__text">AimeCard Universal OCR algorithm automatically detects similar records in an image document, and extracts information based on template settings.&nbsp;</div>
+	</li>
+	<li class="tech-detail__item">
+	<div class="tech-detail__icon"><img   alt="product" src="/assets/aimesoft/images/technologies-04.png"></div>
+
+	<div class="tech-detail__title">Data Mining technologies</div>
+
+	<div class="tech-detail__text">Big Data processing, KPI prediction, predictive analytics based on Big Data, recomendation algorithms, data generation for machine learning</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<div class="aime-benefits bg-white-light">
+<div class="container">
+<h1 class="aime-title text-center">AimeCard Benefits</h1>
+
+<p class="aime-text text-center">AimeCard's Advantages</p>
+</div>
+
+<ul class="bennefits-list">
+	<li class="bennefits-list__item">
+	<div class="bennefits-list__content">
+	<div class="bennefits-list__icon d-flex align-items-center justify-content-center"><img   alt="product" src="/assets/aimesoft/images/feature-03.png"></div>
+
+	<div class="bennefits-list__text">Processing huge amount of text with high precision</div>
+	</div>
+	</li>
+	<li class="bennefits-list__item">
+	<div class="bennefits-list__content">
+	<div class="bennefits-list__icon d-flex align-items-center justify-content-center"><img   alt="product" src="/assets/aimesoft/images/feature-02.png"></div>
+
+	<div class="bennefits-list__text">Optimizing data storage and data management</div>
+	</div>
+	</li>
+	<li class="bennefits-list__item">
+	<div class="bennefits-list__content">
+	<div class="bennefits-list__icon d-flex align-items-center justify-content-center"><img   alt="product" src="/assets/aimesoft/images/feature-04.png"></div>
+
+	<div class="bennefits-list__text">Searching papers and documents effortlessly</div>
+	</div>
+	</li>
+</ul>
+</div>
+
+<div aria-hidden="true" class="modal modal-video fade" id="myModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+
+<div class="embed-responsive embed-responsive-16by9"><iframe allow="autoplay" class="embed-responsive-item" id="video" style="border: 0;"></iframe></div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <footer class="footer position-relative">
+    <div class="aime-container-mini">
+        <div class="row w-100">
+            <div class="col-sm-12 footer__info text-center">
+                                <a class="footer__logo d-block mx-auto" href="/">
+                    <img src="/assets/aimesoft/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                                            <div class="col-4 col-md-3 text-nowrap">
+                            <ul class="list-link">
+                                
+                                    <li class="list-link__item"><a href="/products.html">Solution</a></li>
+                                
+                                    <li class="list-link__item"><a href="/services.html">Service</a></li>
+                                
+                                    <li class="list-link__item"><a href="/multimodalai.html">Technology</a></li>
+                                
+                            </ul>
+                        </div>
+                                            <div class="col-4 col-md-3 text-nowrap">
+                            <ul class="list-link">
+                                
+                                    <li class="list-link__item"><a href="/jobs.html">Career</a></li>
+                                
+                                    <li class="list-link__item"><a href="/press.html">News</a></li>
+                                
+                                    <li class="list-link__item"><a href="/contact.html">Contact Us</a></li>
+                                
+                            </ul>
+                        </div>
+                                            <div class="col-4 col-md-3 text-nowrap">
+                            <ul class="list-link">
+                                
+                                    <li class="list-link__item"><a href="/privacy.html">Privacy Policy</a></li>
+                                
+                            </ul>
+                        </div>
+                                        <div class="col-12 col-md-3">
+                        <ul class="list-social d-flex pt-1">
+                            <li class="list-social__item pr-2 mr-3"><a class="list-social__link" href="https://www.facebook.com/aimesoft"><img src="/assets/aimesoft/images/icon-fb.png" alt="social" title="facebook"></a></li>
+                            <li class="list-social__item pr-2 mr-3"><a class="list-social__link" href="https://twitter.com/aimesoftinc"><img src="/assets/aimesoft/images/icon-tw.png" alt="social" title="twitter"></a></li>
+                            <li class="list-social__item pr-2 mr-3"><a class="list-social__link" href="https://www.linkedin.com/company/aimesoft"><img src="/assets/aimesoft/images/icon-in.png" alt="social" title="linkin"></a></li>
+                            <!-- <li class="list-social__item pr-2 mr-3"><a class="list-social__link" href="#"><img
+                                            src="<php print $this->get('ROOT_PATH'); ?>assets/aimesoft/images/icon-sky.png"
+                                            alt="social" title="skype"/></a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class='footer__line'>
+    <div class="aime-container-mini justify-content-between">
+        <ul class="info-list">
+            <li class="info-list__item">
+                <div class="info-list__icon">
+                    <img class="icon-pin" src="/assets/aimesoft/images/icon-pin.png" alt="icon">
+                </div>
+                <div class="info-list__text">2150 Ringwood Ave., San Jose, California 95131, USA</div>
+            </li>
+            <li class="info-list__item">
+                <div class="info-list__icon"><img class="icon-telephone" src="/assets/aimesoft/images/icon-telephone.png" alt="icon">
+                </div>
+                <a class="info-list__text" href="tel:8553028668">(855) 302 8668</a>
+            </li>
+
+                            <li class="info-list__item">
+
+                    <div class="info-list__icon">
+
+                        <img class="icon-mail" src="/assets/aimesoft/images/icon-mail.png" alt="icon">
+                    </div>
+                    <a class="info-list__text" href="mailto:info@aimesoft.com">info@aimesoft.com</a>
+                </li>
+            
+
+                            <li class="info-list__item">
+                    <div class="info-list__icon">
+                        <img class="icon-pin" src="/assets/aimesoft/images/icon-pin.png" alt="icon">
+                    </div>
+                    <div class="info-list__text">Tokyo office: 3F, Shiodome Bldg., 1-2-20 Kaigan, Minato-ku, Tokyo 105-0022, Japan</div>
+                </li>
+                            <li class="info-list__item">
+                    <div class="info-list__icon">
+                        <img class="icon-pin" src="/assets/aimesoft/images/icon-pin.png" alt="icon">
+                    </div>
+                    <div class="info-list__text">Hanoi office: 10F, Viet A Tower, 9 Duy Tan Street, Cau Giay, Hanoi, Vietnam</div>
+                </li>
+                            <li class="info-list__item">
+                    <div class="info-list__icon">
+                        <img class="icon-pin" src="/assets/aimesoft/images/icon-pin.png" alt="icon">
+                    </div>
+                    <div class="info-list__text">Southern Vietnam Representative Office: SAV2-01.05 The Sun Avenue, No.28 Mai Chi Tho Str., An Phu Ward, Thu Duc City, HCMC, Vietnam</div>
+                </li>
+                    </ul>
+        <div class="footer__select">
+            <div class="dropdown js-dropdown-language dropdown-language">
+                <button class="dropdown-toggle" id="selectLanguage" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                    <span class="dropdown-select"><span class="content">
+                            <img src="/assets/aimesoft/images/flag-kingdom.png" alt="png">
+                            <span>English</span>
+                        </span>
+                    </span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="selectLanguage" role="menu">
+                                            <a class="dropdown-item" href="/vi/aimecard.html">
+                            <div class="content">
+                                <img src="/assets/aimesoft/images/flag-vn.png" alt="flag">
+                                <span>Tiếng Việt</span>
+                            </div>
+                        </a>
+                                            <a class="dropdown-item" href="/fr/aimecard.html">
+                            <div class="content">
+                                <img src="/assets/aimesoft/images/flag-france.png" alt="flag">
+                                <span>French</span>
+                            </div>
+                        </a>
+                                            <a class="dropdown-item" href="/aimecard.html">
+                            <div class="content">
+                                <img src="/assets/aimesoft/images/flag-kingdom.png" alt="flag">
+                                <span>English</span>
+                            </div>
+                        </a>
+                                            <a class="dropdown-item" href="/ja/aimecard.html">
+                            <div class="content">
+                                <img src="/assets/aimesoft/images/flag-japan.png" alt="flag">
+                                <span>日本語</span>
+                            </div>
+                        </a>
+                                            <a class="dropdown-item" href="/ko/aimecard.html">
+                            <div class="content">
+                                <img src="/assets/aimesoft/images/flag-korea.png" alt="flag">
+                                <span>한국어</span>
+                            </div>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+        <button class="scrollToTopBtn"></button>
+    </div>
+    <img style="width: 30px" class="bg-tr d-none d-lg-block" src="/assets/aimesoft/images/bg-c-06.png" alt="cover">
+</footer>
+<div style="background-color: #dfe7e8; text-align: center; padding: 5px; color: black; font-size:13px;">
+    <p>Copyright © 2018 - 2026 Aimesoft. All Rights Reserved.</p>
+</div>
+<script>
+    // ===== Scroll to Top ==== 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {
+            $('#return-to-top').fadeIn(200);
+        } else {
+            $('#return-to-top').fadeOut(200);
+        }
+    });
+    $('#return-to-top').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+    });
+</script>
+<script src="/assets/aimesoft/js/popper.min.js"></script>
+<script src="/assets/aimesoft/js/bootstrap.min.js" crossorigin="anonymous">
+</script>
+<script src="/assets/aimesoft/js/jquery.flipster.min.js"></script>
+<script src="/assets/aimesoft/js/owl.carousel.min.js"></script>
+<script src="/assets/aimesoft/js/isotope.pkgd.min.js"></script>
+<script src="/assets/aimesoft/js/main.js"></script>
+
+
+<div id="captcha-modal" class="modal">
+    <div class="captcha-modal-title">Verify</div>
+    <div id="captcha-modal-container" style="margin-bottom: 12px;">
+        <!-- CAPTCHA will be rendered here -->
+    </div>
+    <div style="text-align: center; margin-top: 12px;">
+        <a href="#" rel="modal:close" class="btn btn-secondary" style="margin-right: 8px;">Cancel</a>
+        <button type="button" class="btn btn-primary" id="captcha-submit-btn">Verify</button>
+    </div>
+</div>
+
+
+<script src="/assets/aimesoft/js/captcha.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="/assets/aimesoft/js/captcha-modal.js"></script>
+<script src="/assets/aimesoft/js/contact.js?=6"></script>
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '903337879997436');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" alt="track" src="https://www.facebook.com/tr?id=903337879997436&ev=PageView&noscript=1"></noscript>
+    <!-- End Meta Pixel Code -->
+</body>
+
+</html>
